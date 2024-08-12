@@ -1,8 +1,6 @@
-package ChewbaccaAndNumber;
-
 import java.util.Scanner;
 
-public class Main {
+public class ChewbaccaAndNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String num = sc.next();
@@ -19,7 +17,8 @@ public class Main {
             }
         }
 
-        System.out.println(Integer.parseInt(str.toString()));
+        System.out.println(str.toString());
+        sc.close();
     }
 
 }
