@@ -24,12 +24,10 @@ public class beautifulmatrix {
                 }
             }
         }
-
+        
         // Using manhattan distance formula : (2, 2) is the center of the matrix
         int moves = Math.abs(row - 2) + Math.abs(col - 2); 
         System.out.println(moves);
-
-
         
         sc.close();
     }
