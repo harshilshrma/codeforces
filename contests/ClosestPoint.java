@@ -1,5 +1,6 @@
+package contests;
 import java.util.*;
-public class CONTESTClosestPoint {
+public class ClosestPoint {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
