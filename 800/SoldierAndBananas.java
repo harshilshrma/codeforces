@@ -8,11 +8,7 @@ public class SoldierAndBananas {
         int startingAmount = Integer.parseInt(inputLine[1]);
         int numberOfBananasNeeded = Integer.parseInt(inputLine[2]);
 
-        int amountRequired = 0;
-        
-        for (int i = 1; i <= numberOfBananasNeeded; i++) {
-            amountRequired += i * costOfFirstBanana;
-        }
+        int amountRequired = costOfFirstBanana * numberOfBananasNeeded * (numberOfBananasNeeded + 1) / 2;
 
         int amountToBorrow = 0;
         if (amountRequired > startingAmount) {
