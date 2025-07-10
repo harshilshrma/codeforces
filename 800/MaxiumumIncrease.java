@@ -4,23 +4,19 @@ public class MaxiumumIncrease {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        sc.nextLine();
-        String[] inputLine = sc.nextLine().split(" ");
 
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(inputLine[i]);
-        }
+        int maxLen = 1, currLen = 1;
+        int prev = sc.nextInt();
 
-        int maxLen = 1, l = 0, r = 1, startIdx = 0;
-        while (r < n) {
-            if (arr[l] < arr[r]) {
-                maxLen = Math.max(maxLen, r - startIdx + 1);
+        for (int i = 1; i < n; i++) {
+            int curr = sc.nextInt();
+            if (curr > prev) {
+                currLen++;
+                maxLen = Math.max(maxLen, currLen);
             } else {
-                startIdx = r;
+                currLen = 1;
             }
-            l++;
-            r++;
+            prev = curr;
         }
 
         System.out.println(maxLen);
