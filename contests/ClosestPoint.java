@@ -1,4 +1,3 @@
-package contests;
 import java.util.*;
 public class ClosestPoint {
     public static void main(String[] args) {
