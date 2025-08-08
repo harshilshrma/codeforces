@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.Stack;
+import java.util.HashSet;
 
 public class MixMexMax {
     public static void solve(BufferedReader br, BufferedWriter bw) throws IOException {
@@ -11,12 +11,12 @@ public class MixMexMax {
             arr[i] = Integer.parseInt(line[i]);
         }
 
-        Stack<Integer> st = new Stack<>();
+        HashSet<Integer> set = new HashSet<>();
         for (int i : arr) {
-            if (i != -1) st.add(i);
+            if (i != -1) set.add(i);
         }
 
-        if (st.size() <= 1 && !st.contains(0)) {
+        if (set.size() <= 1 && !set.contains(0)) {
             bw.write("YES" + "\n");
         } else {
             bw.write("NO" + "\n");
