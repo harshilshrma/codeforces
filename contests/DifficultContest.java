@@ -1,15 +1,13 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DifficultContest {
     public static void solve(Scanner sc) {
         String s = sc.nextLine();
-
-        while (s.contains("NTT") || s.contains("FFT")) {
-            s = s.replace("NTT", "TTN");
-            s = s.replace("FFT", "FTF");
-        }
+        char[] arr = s.toCharArray();
+        Arrays.sort(arr);
         
-        System.out.println(s);
+        System.out.println(new String(arr));
     }
 
     public static void main(String[] args) {

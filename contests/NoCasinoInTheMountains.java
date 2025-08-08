@@ -1,38 +1,43 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class NoCasinoInTheMountains {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        sc.nextLine();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        for (int test = 0; test < t; test++) {
-            int n = sc.nextInt();
-            int k = sc.nextInt();
+        int t = Integer.parseInt(br.readLine());
+
+        while (t-- > 0) {
+            String[] nk = br.readLine().split(" ");
+            int n = Integer.parseInt(nk[0]);
+            int k = Integer.parseInt(nk[1]);
+
             int[] a = new int[n];
+            String[] arr = br.readLine().split(" ");
             for (int i = 0; i < n; i++) {
-                a[i] = sc.nextInt();
+                a[i] = Integer.parseInt(arr[i]);
             }
 
             int ans = 0;
-            int i = 0;
-            while (i <= n - k) {
-                boolean canHike = true;
-                for (int j = 0; j < k; j++) {
-                    if (a[i + j] != 0) {
-                        canHike = false;
-                        break;
-                    }
-                }
-                if (canHike) {
-                    ans++;
-                    i += k + 1;
+            int cnt = 0;
+
+            for (int i = 0; i < n; i++) {
+                if (a[i] == 0) {
+                    cnt++;  // building a block of good days
                 } else {
-                    i++;
+                    ans += (cnt + 1) / (k + 1);
+                    cnt = 0;  // reset on bad weather
                 }
             }
-            System.out.println(ans);
+
+            // handle last block (if it ends with 0s)
+            ans += (cnt + 1) / (k + 1);
+
+            bw.write(ans + "\n");
         }
-        sc.close();
+
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
