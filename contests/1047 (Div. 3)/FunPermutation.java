@@ -4,7 +4,6 @@ Date: 07/09/2025
 */
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class FunPermutation {
     public static void solve(BufferedReader br, BufferedWriter bw) throws IOException {
@@ -16,9 +15,15 @@ public class FunPermutation {
             arr[i] = Integer.parseInt(line[i]);
         }
 
-        ArrayList<Integer> list = new ArrayList<>(;
-        
+        int[] arr2 = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr2[i] = n + 1 - arr[i];
+        }
 
+        for (int i = 0; i < n; i++) {
+            bw.write(arr2[i] + " ");
+        }
+        bw.write("\n");
     }
 
     public static void main(String[] args) throws IOException {
