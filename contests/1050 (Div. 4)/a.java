@@ -1,27 +1,21 @@
 /*
 Code by Harshil Sharma (https://codeforces.com/profile/harshilshrma)
-Date: 08/09/2025
+Date: 13/09/2025
 */
 
 import java.io.*;
-import java.util.Arrays;
 
-public class CakeCollection {
+public class a {
     public static void solve(BufferedReader br, BufferedWriter bw) throws IOException {
         String[] line = br.readLine().split(" ");
-        int n = Integer.parseInt(line[0]);
-        int seconds = Integer.parseInt(line[1]);
+        int x = Integer.parseInt(line[0]);
+        int n = Integer.parseInt(line[1]);
 
-        String[] line2 = br.readLine().split(" ");
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(line2[i]);
+        if ((n & 1) == 0) {
+            bw.write('0' + "\n");
+        } else {
+            bw.write(x + "\n");
         }
-
-        Arrays.sort(arr);
-        
-
-        
     }
 
     public static void main(String[] args) throws IOException {
